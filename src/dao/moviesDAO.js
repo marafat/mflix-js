@@ -106,7 +106,7 @@ export default class MoviesDAO {
    */
   static genreSearchQuery(genre) {
     /**
-    Ticket: Text and Subfield Search
+    Ticket: Text and Subfield Search - Done
 
     Given an array of one or more genres, construct a query that searches
     MongoDB for movies with that genre.
@@ -114,9 +114,8 @@ export default class MoviesDAO {
 
     const searchGenre = Array.isArray(genre) ? genre : Array(genre)
 
-    // TODO Ticket: Text and Subfield Search
     // Construct a query that will search for the chosen genre.
-    const query = {}
+    const query = { genres: { $in: searchGenre } }
     const project = {}
     const sort = DEFAULT_SORT
 
