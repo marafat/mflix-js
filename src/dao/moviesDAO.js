@@ -180,7 +180,7 @@ export default class MoviesDAO {
     }
 
     /**
-    Ticket: Faceted Search
+    Ticket: Faceted Search - Done
 
     Please append the skipStage, limitStage, and facetStage to the queryPipeline
     (in that order). You can accomplish this by adding the stages directly to
@@ -193,8 +193,9 @@ export default class MoviesDAO {
     const queryPipeline = [
       matchStage,
       sortStage,
-      // TODO Ticket: Faceted Search
-      // Add the stages to queryPipeline in the correct order.
+      skipStage,
+      limitStage,
+      facetStage,
     ]
 
     try {
