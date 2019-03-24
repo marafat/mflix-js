@@ -281,7 +281,7 @@ export default class MoviesDAO {
   static async getMovieByID(id) {
     try {
       /**
-      Ticket: Get Comments
+      Ticket: Get Comments - Done
 
       Given a movie ID, build an Aggregation Pipeline to retrieve the comments
       matching that movie's ID.
@@ -290,12 +290,22 @@ export default class MoviesDAO {
       stage that searches the `comments` collection for the correct comments.
       */
 
-      // TODO Ticket: Get Comments
       // Implement the required pipeline.
       const pipeline = [
         {
           $match: {
             _id: ObjectId(id),
+          },
+        },
+        {
+          $lookup: {
+            from: "comments",
+            let: { id: "$_id" },
+            pipeline: [
+              { $match: { $expr: { $eq: ["$movie_id", "$$id"] } } },
+              { $sort: { date: -1 } },
+            ],
+            as: "comments",
           },
         },
       ]
