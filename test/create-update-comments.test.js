@@ -52,12 +52,12 @@ describe("Create/Update Comments", async () => {
     expect(postCommentResult.insertedCount).toBe(1)
     expect(postCommentResult.insertedId).not.toBe(null)
 
+    comment.id = postCommentResult.insertedId
+
     const martianComments = (await MoviesDAO.getMovieByID(movieId)).comments
 
     expect(martianComments[0]._id).toEqual(postCommentResult.insertedId)
     expect(martianComments[0].text).toEqual(comment.text)
-
-    comment.id = postCommentResult.insertedId
   })
 
   test("Can update a comment", async () => {
