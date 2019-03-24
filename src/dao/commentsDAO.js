@@ -10,7 +10,9 @@ export default class CommentsDAO {
     try {
       comments = await conn.db(process.env.MFLIX_NS).collection("comments")
     } catch (e) {
-      console.error(`Unable to establish collection handles in userDAO: ${e}`)
+      console.error(
+        `Unable to establish collection handles in commentsDAO: ${e}`,
+      )
     }
   }
 
