@@ -91,7 +91,7 @@ export default class CommentsDAO {
 
   static async deleteComment(commentId, userEmail) {
     /**
-    Ticket: Delete Comments
+    Ticket: Delete Comments - Done
 
     Implement the deleteOne() call in this method.
 
@@ -100,10 +100,10 @@ export default class CommentsDAO {
     */
 
     try {
-      // TODO Ticket: Delete Comments
       // Use the userEmail and commentId to delete the proper comment.
       const deleteResponse = await comments.deleteOne({
         _id: ObjectId(commentId),
+        email: userEmail,
       })
 
       return deleteResponse
