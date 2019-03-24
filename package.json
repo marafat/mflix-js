@@ -20,8 +20,7 @@
       "*.js": [
         "prettier --write",
         "eslint --fix",
-        "npm test",
-        "git add"
+        "npm test"
       ]
     },
     "ignore": [
