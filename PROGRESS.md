@@ -1,2 +1,3 @@
 - Submitted Chapter 1
 - Submitted Chapter 2
+- Submitted Chapter 3
