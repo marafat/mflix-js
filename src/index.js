@@ -14,21 +14,17 @@ maximum connection pool size to 50 active connections.
 */
 
 /**
-Ticket: Timeouts
+Ticket: Timeouts - Done
 
 Please prevent the program from waiting indefinitely by setting the write
 concern timeout limit to 2500 milliseconds.
 */
 
-MongoClient.connect(
-  process.env.MFLIX_DB_URI,
-  // TODO: Timeouts
-  // Set the write timeout limit to 2500 milliseconds.
-  {
-    poolSize: 50,
-    useNewUrlParser: true,
-  },
-)
+MongoClient.connect(process.env.MFLIX_DB_URI, {
+  poolSize: 50,
+  useNewUrlParser: true,
+  wtimeout: 2500,
+})
   .catch(err => {
     console.error(err.stack)
     process.exit(1)
