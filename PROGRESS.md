@@ -2,3 +2,4 @@
 - Submitted Chapter 2
 - Submitted Chapter 3
 - Submitted Chapter 4
+- Submitted Final Exam
