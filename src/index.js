@@ -20,6 +20,14 @@ Please prevent the program from waiting indefinitely by setting the write
 concern timeout limit to 2500 milliseconds.
 */
 
+/**
+Ticket: Principle of Least Privilege - Done
+
+After creating a new user with readWrite role on only the `mflix` db
+DB_URI was updated in .env file and ticket was passed with verification
+code from `status` page.
+*/
+
 MongoClient.connect(process.env.MFLIX_DB_URI, {
   poolSize: 50,
   useNewUrlParser: true,
